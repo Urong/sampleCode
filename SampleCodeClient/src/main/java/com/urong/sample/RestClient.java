@@ -14,21 +14,17 @@ public class RestClient {
 
 	public void callServer() {
 		String url = "http://10.0.0.205:8080/sample/call";
-
-		ResponseEntity<?> respEntity = restTemplate.getForEntity(url, ResponseEntity.class);
+		ResponseEntity<?> respEntity = restTemplate.getForEntity(url, String.class);
 
 		HttpStatus status = respEntity.getStatusCode();
-		String body = (String) respEntity.getBody();
+		String body = respEntity.getBody().toString();
 
-		if (HttpStatus.NO_CONTENT.equals(status)) {
-			// 203
-			System.out.println("203");
+		if (HttpStatus.PARTIAL_CONTENT.equals(status)) {
+			System.out.println("206");
 		} else if (HttpStatus.OK.equals(status)) {
-			// 200
-			System.out.println("OK");
+			System.out.println("200");
+			System.out.println("body : " + body);
 		}
-
-		System.out.println("body : " + body);
 
 		callServer();
 	}
