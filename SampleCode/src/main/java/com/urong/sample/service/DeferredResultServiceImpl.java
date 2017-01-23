@@ -12,7 +12,7 @@ import com.urong.sample.component.DeferredResultStrore;
 public class DeferredResultServiceImpl implements DeferredResultService {
 
 	@Autowired
-	private DeferredResultStrore scheduler;
+	private DeferredResultStrore deferredResultStore;
 
 	@Override
 	public DeferredResult<String> biteResponse(final HttpServletResponse resp) {
@@ -22,7 +22,7 @@ public class DeferredResultServiceImpl implements DeferredResultService {
 
 		defResult.onCompletion(new Runnable() {
 			public void run() {
-				scheduler.getResponseBodyQueue().remove(defResult);
+				deferredResultStore.getResponseBodyQueue().remove(defResult);
 			}
 		});
 
@@ -31,11 +31,11 @@ public class DeferredResultServiceImpl implements DeferredResultService {
 				defResult.setErrorResult("onTimeout");
 				// 206
 				resp.setStatus(HttpServletResponse.SC_PARTIAL_CONTENT);
-				scheduler.getResponseBodyQueue().remove(defResult);
+				deferredResultStore.getResponseBodyQueue().remove(defResult);
 			}
 		});
 
-		scheduler.getResponseBodyQueue().add(defResult);
+		deferredResultStore.getResponseBodyQueue().add(defResult);
 
 		return defResult;
 	}

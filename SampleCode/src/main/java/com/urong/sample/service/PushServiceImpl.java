@@ -10,17 +10,17 @@ import com.urong.sample.component.DeferredResultStrore;
 public class PushServiceImpl implements PushService {
 
 	@Autowired
-	private DeferredResultStrore scheduler;
+	private DeferredResultStrore deferredResultStore;
 
 	@Override
 	public boolean pushMessage(String message) {
 		// send message or select data in DB.
 
-		for (DeferredResult<String> deferredResult : scheduler.getResponseBodyQueue()) {
+		for (DeferredResult<String> deferredResult : deferredResultStore.getResponseBodyQueue()) {
 
 			deferredResult.setResult("push messages : " + message);
 
-			scheduler.getResponseBodyQueue().remove(deferredResult);
+			deferredResultStore.getResponseBodyQueue().remove(deferredResult);
 		}
 
 		return true;

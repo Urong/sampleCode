@@ -38,4 +38,9 @@ public class SampleController {
 		return pushService.pushMessage(message);
 	}
 
+	@RequestMapping(value = "/test/1")
+	public @ResponseBody String test(HttpServletResponse resp) {
+		return "test";
+	}
+
 }
