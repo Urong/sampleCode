@@ -1,5 +1,6 @@
 package com.urong.sample.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +30,8 @@ public class SampleController {
 	}
 
 	@RequestMapping(value = "/call")
-	public @ResponseBody DeferredResult<String> deferredResult(HttpServletResponse resp) {
-		return deferredResultService.biteResponse(resp);
+	public @ResponseBody DeferredResult<?> deferredResult(HttpServletResponse resp, HttpServletRequest req) {
+		return deferredResultService.biteResponse(resp, req);
 	}
 
 	@RequestMapping(value = "/push/{message}")
@@ -38,9 +39,14 @@ public class SampleController {
 		return pushService.pushMessage(message);
 	}
 
-	@RequestMapping(value = "/test/1")
-	public @ResponseBody String test(HttpServletResponse resp) {
-		return "test";
+	// ----------- group ------------
+	@RequestMapping(value = "/call/group/{groupKey}")
+	public @ResponseBody DeferredResult<?> callGroup(@PathVariable String groupKey, HttpServletResponse resp) {
+		return deferredResultService.biteGroupResponse(groupKey, resp);
 	}
 
+	@RequestMapping(value = "/push/group/{groupKey}/topic/{topic}")
+	public @ResponseBody boolean pushGroup(@PathVariable String groupKey, @PathVariable String topic) {
+		return pushService.pushGroupMessage(groupKey, topic);
+	}
 }

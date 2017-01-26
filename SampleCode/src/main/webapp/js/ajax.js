@@ -11,8 +11,10 @@ function callServer() {
 		success : function(response) {
 			$("#spinner").fadeOut('slow')
 
-			$("#msg").append(response + "\n");
-			$("#msg").show();
+			if (response != "onTimeout") {
+				$("#msg").append(response + "\n");
+				$("#msg").show();
+			}
 		},
 
 		error : function(request, status, error) {
@@ -28,6 +30,7 @@ function sendMessage(message) {
 	$.ajax({
 		url : "/sample/push/" + message,
 		processData : false,
+		contentType : "text/html; charset=utf-8",
 		type : 'POST',
 
 		success : function(response) {
