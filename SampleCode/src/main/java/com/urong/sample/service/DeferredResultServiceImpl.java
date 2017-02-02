@@ -23,7 +23,7 @@ public class DeferredResultServiceImpl implements DeferredResultService {
 
 		final DeferredResult<String> defResult = new DeferredResult<String>(deferredResultStore.getResultTimeOut());
 
-		startRemover(resp, defResult);
+		removeObserver(resp, defResult, null);
 
 		deferredResultStore.getResponseBodyQueue().add(defResult);
 
@@ -38,7 +38,7 @@ public class DeferredResultServiceImpl implements DeferredResultService {
 
 		List<DeferredResult<InterfaceModel>> defResultList = null;
 
-		startRemover(resp, defResult);
+		removeObserver(resp, defResult, key);
 
 		if (deferredResultStore.getGroupMap().containsKey(key)) {
 
@@ -56,19 +56,54 @@ public class DeferredResultServiceImpl implements DeferredResultService {
 		return defResult;
 	}
 
-	private void startRemover(final HttpServletResponse resp, final DeferredResult<?> defResult) {
+	private void removeObserver(final HttpServletResponse resp, final DeferredResult<?> defResult, final String key) {
+
 		defResult.onCompletion(new Runnable() {
 			public void run() {
-				deferredResultStore.getResponseBodyQueue().remove(defResult);
+				if (key != null) {
+					List<DeferredResult<InterfaceModel>> defResultList = deferredResultStore.getGroupMap().get(key);
+
+					if (defResultList != null) {
+						for (DeferredResult<InterfaceModel> deferredResult : defResultList) {
+							if (deferredResult.hashCode() == defResult.hashCode()) {
+								defResultList.remove(deferredResult);
+							}
+						}
+					}
+
+				} else {
+					if (!deferredResultStore.getResponseBodyQueue().isEmpty()) {
+						deferredResultStore.getResponseBodyQueue().remove(defResult);
+					}
+				}
 			}
 		});
 
 		defResult.onTimeout(new Runnable() {
 			public void run() {
-				defResult.setErrorResult("onTimeout");
 				// 206
 				resp.setStatus(HttpServletResponse.SC_PARTIAL_CONTENT);
-				deferredResultStore.getResponseBodyQueue().remove(defResult);
+
+				if (key != null) {
+					List<DeferredResult<InterfaceModel>> defResultList = deferredResultStore.getGroupMap().get(key);
+
+					if (defResultList != null) {
+						for (DeferredResult<InterfaceModel> deferredResult : defResultList) {
+							if (deferredResult.hashCode() == defResult.hashCode()) {
+
+								InterfaceModel model = new InterfaceModel();
+								model.setId(key);
+								model.setMessage("onTimeout");
+								deferredResult.setErrorResult(model);
+								defResultList.remove(deferredResult);
+							}
+						}
+					}
+
+				} else {
+					defResult.setErrorResult("onTimeout");
+					deferredResultStore.getResponseBodyQueue().remove(defResult);
+				}
 			}
 		});
 	}

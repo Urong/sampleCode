@@ -40,13 +40,15 @@ public class SampleController {
 	}
 
 	// ----------- group ------------
+
 	@RequestMapping(value = "/call/group/{groupKey}")
 	public @ResponseBody DeferredResult<?> callGroup(@PathVariable String groupKey, HttpServletResponse resp) {
 		return deferredResultService.biteGroupResponse(groupKey, resp);
 	}
 
 	@RequestMapping(value = "/push/group/{groupKey}/topic/{topic}")
-	public @ResponseBody boolean pushGroup(@PathVariable String groupKey, @PathVariable String topic) {
-		return pushService.pushGroupMessage(groupKey, topic);
+	public @ResponseBody boolean pushGroup(@PathVariable String groupKey, @PathVariable String topic,
+			HttpServletResponse resp) {
+		return pushService.pushGroupMessage(groupKey, topic, resp);
 	}
 }

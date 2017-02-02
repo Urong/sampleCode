@@ -1,6 +1,9 @@
 package com.urong.sample.service;
 
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -16,25 +19,27 @@ public class PushServiceImpl implements PushService {
 	@Override
 	public boolean pushMessage(String message) {
 
-		for (DeferredResult<String> deferredResult : deferredResultStore.getResponseBodyQueue()) {
+		if (!deferredResultStore.getResponseBodyQueue().isEmpty()) {
 
-			deferredResult.setResult("push messages : " + message);
+			for (DeferredResult<String> deferredResult : deferredResultStore.getResponseBodyQueue()) {
 
-			deferredResultStore.getResponseBodyQueue().remove(deferredResult);
+				deferredResult.setResult(message);
+			}
+
+			deferredResultStore.getResponseBodyQueue().remove();
 		}
 
 		return true;
 	}
 
 	@Override
-	public boolean pushGroupMessage(String key, String topic) {
-
-		// select data in DB.
-
+	public boolean pushGroupMessage(String key, String topic, HttpServletResponse resp) {
 		List<DeferredResult<InterfaceModel>> defResultList = null;
 
+		// select data in DB.
 		InterfaceModel model = new InterfaceModel();
-		model.setMessage("default Message ~");
+		model.setMessage("그룹 메시지~~");
+		model.setId(key);
 
 		if (deferredResultStore.getGroupMap().containsKey(key)) {
 			defResultList = deferredResultStore.getGroupMap().get(key);
@@ -42,6 +47,8 @@ public class PushServiceImpl implements PushService {
 			for (DeferredResult<InterfaceModel> deferredResult : defResultList) {
 				deferredResult.setResult(model);
 			}
+
+			deferredResultStore.getGroupMap().remove(key);
 		}
 
 		return true;

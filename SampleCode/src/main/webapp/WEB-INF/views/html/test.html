@@ -4,7 +4,6 @@
 <head>
 <meta charset="utf-8" />
 <title>test</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 <!-- jquery -->
 <script th:src="@{/js/common/jquery-1.10.2.js}"></script>
@@ -16,16 +15,30 @@
 </head>
 <body>
 	<input type="button" id="call_button" value="call" />
-
+	<img id="spinner" th:src="@{/images/477.gif}" style="display: none;" />
 	<input type="button" id="trigger_button" value="push" />
 	<br />
 
-	<img id="spinner" th:src="@{/images/477.gif}" style="display: none;" />
 	<hr />
-	<h3>message</h3>
+
+	<label>groupKey :</label>
+	<input type="text" id="groupKey" />
+
+	<input type="button" id="call_group_button" value="callGroup" />
+	<img id="groupSpinner" th:src="@{/images/478.gif}"
+		style="display: none;" />
+	<input type="button" id="push_group_button" value="pushGroup" />
+	<br />
+
+	<hr />
+
+	<br />
+	<br />
 	<textarea id="msg" rows="10" cols="60"></textarea>
-	
-	
+
+
+
+
 
 </body>
 </html>
