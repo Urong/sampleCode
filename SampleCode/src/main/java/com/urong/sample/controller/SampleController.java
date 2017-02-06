@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.urong.sample.component.DeferredResultStrore;
 import com.urong.sample.service.DeferredResultService;
 import com.urong.sample.service.PushService;
 
@@ -21,6 +23,9 @@ public class SampleController {
 
 	@Autowired
 	private DeferredResultService deferredResultService;
+
+	@Autowired
+	private DeferredResultStrore deferredResultStore;
 
 	@RequestMapping(value = "/test")
 	public ModelAndView showTestPage(ModelAndView mav) {
@@ -50,5 +55,14 @@ public class SampleController {
 	public @ResponseBody boolean pushGroup(@PathVariable String groupKey, @PathVariable String topic,
 			HttpServletResponse resp) {
 		return pushService.pushGroupMessage(groupKey, topic, resp);
+	}
+
+	@RequestMapping(value = "/storage/count")
+	public @ResponseBody String getStorageCount() {
+
+		int mapCount = deferredResultStore.getGroupMap().size();
+		int queueCount = deferredResultStore.getResponseBodyQueue().size();
+
+		return "queueCount : " + queueCount + " // mapCount : " + mapCount;
 	}
 }

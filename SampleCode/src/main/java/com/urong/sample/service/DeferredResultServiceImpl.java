@@ -94,6 +94,7 @@ public class DeferredResultServiceImpl implements DeferredResultService {
 								InterfaceModel model = new InterfaceModel();
 								model.setId(key);
 								model.setMessage("onTimeout");
+
 								deferredResult.setErrorResult(model);
 								defResultList.remove(deferredResult);
 							}
