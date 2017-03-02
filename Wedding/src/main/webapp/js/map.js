@@ -7,8 +7,12 @@ Map.prototype.initializeGoogleMap = function(latitude, longtitude) {
 		var mapOptions = {
 			zoom : 17,
 			center : new google.maps.LatLng(latitude, longtitude),
-			scrollwheel : true,
+			scrollwheel : false,
+			/*navigationControl : false,
 			mapTypeControl : false,
+			scaleControl : false,
+			draggable : false,
+			mapTypeId : google.maps.MapTypeId.ROADMAP*/
 		};
 
 		var map = new google.maps.Map(document.getElementById('google_map'),
