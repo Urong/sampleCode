@@ -319,7 +319,6 @@ footer {
 	color: #aaa;
 	border-top: 1px solid #ddd;
 	padding-top: 2.143em; /* 30 (14) */
-	margin-top: 2.143em; /* 30 (14) */
 }
 
 footer a {
@@ -568,7 +567,7 @@ to {
 	<header class="w3-display-container w3-wide bgimg w3-grayscale-min"
 		id="home">
 		<div class="w3-display-middle w3-text-white w3-center">
-			<h1 class="w3-jumbo">Jun &amp; Hee</h1>
+			<h1 class="w3-jumbo">June &amp; Heeny</h1>
 			<h2>Are getting married</h2>
 			<h2>
 				<b>11.11.2017</b>
@@ -580,11 +579,12 @@ to {
 	<div class="w3-bottom w3-hide-small">
 		<div
 			class="w3-bar w3-white w3-center w3-padding-8 w3-opacity-min w3-hover-opacity-off">
-			<a href="#home" style="width: 25%" class="w3-bar-item w3-button">Home</a>
-			<a href="#us" style="width: 25%" class="w3-bar-item w3-button">Jun
-				&amp; Hee</a> <a href="#wedding" style="width: 25%"
-				class="w3-bar-item w3-button">Wedding</a> <a href="#map"
-				style="width: 25%" class="w3-bar-item w3-button w3-hover-black">Map</a>
+			<a href="#home" style="width: 25%" class="w3-bar-item w3-button"><b>Home</b></a>
+
+			<a href="#us" style="width: 25%" class="w3-bar-item w3-button"><b>June
+					&amp; Heeny</b></a> <a href="#wedding" style="width: 25%"
+				class="w3-bar-item w3-button"><b>Wedding</b></a> <a href="#map"
+				style="width: 25%" class="w3-bar-item w3-button w3-hover-black"><b>Map</b></a>
 		</div>
 	</div>
 
@@ -593,13 +593,33 @@ to {
 		id="us">
 		<div class="w3-content">
 			<h1 class="w3-center w3-text-grey">
-				<b>Jun &amp; Hee</b>
+				<b>Youngjun Byeon <span style="color: #F83F53;">♥</span> Heeeun
+					Lim
+				</b>
 			</h1>
 
 			<!-- img -->
-			<img class="w3-round w3-grayscale-min"
+			<!-- <img class="w3-round w3-grayscale-min"
 				src="https://www.w3schools.com/w3images/wedding_couple2.jpg"
-				style="width: 100%; margin: 32px 0" />
+				style="width: 100%; margin: 32px 0" /> -->
+
+			<!-- The container is used to define the width of the slideshow -->
+			<div class="w3-round w3-grayscale-min" id="picture">
+				<div id="slides">
+					<img src="http://www.flickr.com/photos/listenmissy/5087404401/"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}"
+						style="width: 100%; margin: 32px 0" /> <img
+						src="http://www.flickr.com/photos/parksdh/5227623068/"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
+						style="width: 100%; margin: 32px 0" /> <img
+						src="http://www.flickr.com/photos/27874907@N04/4833059991/"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
+						style="width: 100%; margin: 32px 0" /><img
+						src="http://www.flickr.com/photos/stuseeger/97577796/"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
+						style="width: 100%; margin: 32px 0" />
+				</div>
+			</div>
 
 
 			<p>
@@ -616,9 +636,9 @@ to {
 			</p>
 			<br />
 			<p class="w3-center">
-				<a href="#picture"
+				<a href="#GALLERY"
 					class="w3-button w3-black w3-round w3-padding-large w3-large">Wedding
-					Details</a>
+					Album</a>
 			</p>
 		</div>
 	</div>
@@ -628,7 +648,7 @@ to {
 		<div class="w3-display-middle w3-text-white w3-center">
 			<h1 class="w3-jumbo">You Are Invited</h1>
 			<br />
-			<h2>Of course..</h2>
+			<h2>Of course !!</h2>
 		</div>
 	</div>
 
@@ -662,64 +682,48 @@ to {
 		</div>
 	</div>
 
-	<div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide"
-		id="map">
+	<div class="w3-container w3-padding-64 w3-black  w3-center" id="map">
 		<div class="w3-content">
-			<h1 class="w3-text-grey">
-				<b>THE LOCATION MAP</b>
+			<h1 class="w3-text-white">
+				<b>THE LOCATION</b>
 			</h1>
-
+			<!-- <br /> <br /> -->
 			<!-- map -->
-			<div id="google_map" class="w3-round-large w3-grayscale-min"
+			<div id="google_map" class="w3-round-large w3-grayscale-min "
 				style="width: 100%; height: 500px; margin: 64px 0;"></div>
 
-		</div>
+			<!-- <h4 style="font-style: inherit;">서울 종로구 북촌로 1길 30-4(안국동 75-1)</h4> -->
 
-	</div>
-
-
-	<!-- The container is used to define the width of the slideshow -->
-	<div class="container" id="picture">
-		<div id="slides">
-			<img src="http://www.flickr.com/photos/listenmissy/5087404401/"
-				th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}" />
-
-
-			<img src="http://www.flickr.com/photos/parksdh/5227623068/"
-				th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}" />
-
-			<img src="http://www.flickr.com/photos/27874907@N04/4833059991/"
-				th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}" />
-
-
-			<img src="http://www.flickr.com/photos/stuseeger/97577796/"
-				th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}" />
 		</div>
 	</div>
 
-	<hr />
-
-	<div id="container">
-		<h2 id="overlay">
-			With overlay <span>&amp; activity indication</span>
-		</h2>
-		<ul>
-			<li><a
-				th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
-				data-imagelightbox="b"><img src="thumb/4.jpg"
-					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
-					alt="Sun, grass and hydrant" /></a></li>
-			<li><a
-				th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
-				data-imagelightbox="b"><img src="thumb/5.jpg"
-					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
-					alt="Bridge over the railway" /></a></li>
-			<li><a
-				th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
-				data-imagelightbox="b"><img src="thumb/6.jpg"
-					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
-					alt="Railway light" /></a></li>
-		</ul>
+	<div
+		class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center"
+		id="GALLERY">
+		<div class="w3-content">
+			<h1 class="w3-text-grey">
+				<b>THE GALLERY</b>
+			</h1>
+		</div>
+		<div id="container">
+			<ul>
+				<li><a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
+					data-imagelightbox="b"><img src="thumb/4.jpg"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
+						alt="Sun, grass and hydrant" /></a></li>
+				<li><a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
+					data-imagelightbox="b"><img src="thumb/5.jpg"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
+						alt="Bridge over the railway" /></a></li>
+				<li><a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
+					data-imagelightbox="b"><img src="thumb/6.jpg"
+						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
+						alt="Railway light" /></a></li>
+			</ul>
+		</div>
 	</div>
 
 	<!-- Footer -->
