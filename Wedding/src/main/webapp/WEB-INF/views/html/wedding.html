@@ -81,6 +81,11 @@ h1.pen {
 	font-family: 'Nanum Pen Script', serif;
 	font-size: 22px;
 }
+
+h2.pen {
+	font-family: 'Nanum Pen Script', serif;
+	font-size: 22px;
+}
 </style>
 </head>
 <body>
@@ -124,7 +129,6 @@ h1.pen {
 					Heeeun Lim
 				</b> -->
 			</h1>
-
 			<p class="w3-center">
 				<i class="pen">평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며<br />사랑
 					베풀며 살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어
@@ -155,30 +159,14 @@ h1.pen {
 				</div>
 			</div>
 
-
-			<!-- <p class="w3-center">
-				<i class="pen">평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며<br />사랑
-					베풀며 살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어
-					주십시오.
-				</i>
-			</p> -->
 			<br />
 			<p class="w3-center">
 				<a href="#GALLERY"
-					class="w3-button w3-black w3-round w3-padding-large w3-large">Wedding
-					Album</a>
+					class="w3-button w3-black w3-round w3-padding-large w3-large">사진
+					더 보기</a>
 			</p>
 		</div>
 	</div>
-
-	<!-- Background photo -->
-	<!-- <div class="w3-display-container bgimg2">
-		<div class="w3-display-middle w3-text-white w3-center">
-			<h1 class="w3-jumbo">You Are Invited</h1>
-			<br />
-			<h2>Of course !!</h2>
-		</div>
-	</div> -->
 
 	<!-- Background photo -->
 	<div class="w3-display-container bgimg2">
@@ -188,43 +176,15 @@ h1.pen {
 			</h1>
 		</div>
 	</div>
-
-
-	<!-- Wedding information -->
-	<div
-		class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center"
-		id="wedding">
-		<div class="w3-content">
-			<h1 class="w3-text-grey">
-				<b>THE WEDDING</b>
-			</h1>
-
-			<!-- img -->
-			<img class="w3-round-large w3-grayscale-min"
-				src="https://www.w3schools.com/w3images/wedding_location.jpg"
-				style="width: 100%; margin: 64px 0" />
-
-
-			<div class="w3-row">
-				<div class="w3-half">
-					<h2>When</h2>
-					<p>Wedding Ceremony - 2:00pm</p>
-					<p>Reception &amp; Dinner - 5:00pm</p>
-				</div>
-				<div class="w3-half">
-					<h2>Where</h2>
-					<p>Some place, an address</p>
-					<p>Some where, some address</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<!-- RSVP section -->
 	<div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide"
 		id="rsvp">
-		<h1 class="pen w3-xxxlarge">참석해주실거죠?</h1>
+		<h1 class="pen w3-xxxlarge">참석해주실래요?</h1>
 
+		<br />
+		<p class="gothic">
+			작은 결혼식이기 때문에<br />여러분의 참석여부 확인이 필요합니다.
+		</p>
 		<p class="w3-xlarge">
 			<button
 				onclick="document.getElementById('id01').style.display='block'"
@@ -232,8 +192,6 @@ h1.pen {
 				style="padding: 8px 60px">응답</button>
 		</p>
 
-		<br /> <br />
-		<!-- <p class="gothic">여러분의  해주세요</p> -->
 	</div>
 
 	<!-- RSVP modal -->
@@ -259,7 +217,7 @@ h1.pen {
 						<button
 							onclick="document.getElementById('id01').style.display='none'"
 							type="button" class="w3-button w3-block w3-green hanna">네.
-							물론이죠 !</button>
+							물론이죠!</button>
 					</div>
 					<div class="w3-half">
 						<button
@@ -272,58 +230,55 @@ h1.pen {
 		</div>
 	</div>
 
-	<!-- RSVP modal -->
-	<!-- 	<div id="id01" class="w3-modal">
-		<div class="w3-modal-content w3-card-4 w3-animate-zoom"
-			style="padding: 32px; max-width: 600px">
-			<div class="w3-container w3-white w3-center">
-				<h1 class="w3-wide">오실거죠?</h1>
-				<p>우리는 당신을 기다리고 있겠습니다.</p>
-				<form>
-					<input class="w3-input w3-border" type="text" placeholder="Name(s)"
-						name="name" />
-				</form>
-				<p>
-					<i>Sincerely, June &amp; Heeny</i>
-				</p>
-				<div class="w3-row">
-					<div class="w3-half">
-						<button
-							onclick="document.getElementById('id01').style.display='none'"
-							type="button" class="w3-button w3-block w3-green">Going</button>
-					</div>
-					<div class="w3-half">
-						<button
-							onclick="document.getElementById('id01').style.display='none'"
-							type="button" class="w3-button w3-block w3-red">Can't
-							come</button>
-					</div>
+	<!-- Wedding information -->
+	<div
+		class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center"
+		id="wedding">
+		<div class="w3-content">
+			<h1 class="w3-text-black">
+				<b class="pen">장소 </b>
+			</h1>
+			<!-- img -->
+			<img class="w3-round-large w3-grayscale-min"
+				src="https://www.w3schools.com/w3images/wedding_location.jpg"
+				style="width: 100%; margin: 20px 0" />
+
+
+			<div class="w3-row">
+				<div class="w3-half">
+					<h2 class="pen">When</h2>
+					<p>Wedding Ceremony - 1:00pm</p>
+					<p>Reception &amp; Lunch - 3:00pm</p>
+				</div>
+				<div class="w3-half">
+					<h2 class="pen">Where</h2>
+					<p>Some place, an address</p>
+					<p>Some where, some address</p>
 				</div>
 			</div>
 		</div>
-	</div> -->
-
-	<div class="w3-container w3-padding-64 w3-gray w3-center" id="map">
-		<div class="w3-content">
-			<h1 class="w3-text-black">
-				<b>THE LOCATION</b>
-			</h1>
-			<!-- <br /> <br /> -->
-			<!-- map -->
-			<div id="google_map" class="w3-round-large w3-grayscale-min "
-				style="width: 100%; height: 500px; margin: 64px 0;"></div>
-
-			<!-- <h4 style="font-style: inherit;">서울 종로구 북촌로 1길 30-4(안국동 75-1)</h4> -->
-
-		</div>
 	</div>
+
+
 
 	<div
 		class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center"
+		id="map">
+		<div class="w3-content">
+			<h1 class="w3-text-black">
+				<b class="pen">위치</b>
+			</h1>
+			<!-- map -->
+			<div id="google_map" class="w3-round-large w3-grayscale-min "
+				style="width: 100%; height: 500px; margin: 20px 0;"></div>
+		</div>
+	</div>
+
+	<div class="w3-container w3-padding-64 w3-pale-red w3-center"
 		id="GALLERY">
 		<div class="w3-content">
-			<h1 class="w3-text-grey">
-				<b>THE GALLERY</b>
+			<h1 class="w3-text-black">
+				<b class="pen">사진</b>
 			</h1>
 		</div>
 		<div id="container">
@@ -355,6 +310,7 @@ h1.pen {
 		</p>
 	</footer>
 	<div class="w3-hide-small" style="margin-bottom: 32px"> </div>
+
 </body>
 
 <script type="text/javascript">
