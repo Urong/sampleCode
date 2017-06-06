@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class WeddingController {
 
-	@RequestMapping(value = "/")
+	@RequestMapping(value = "/home")
 	public ModelAndView showMainView(ModelAndView mav) {
 
 		mav.setViewName("html/wedding");

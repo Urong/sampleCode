@@ -34,546 +34,71 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Raleway" />
 
+<link rel="stylesheet" th:href="@{/css/w3-template.css}" />
+
+<!-- font -->
+<link rel="stylesheet" th:href="@{/font/font.css}" />
+
 <style>
-/* template*/
-body, h1, h2 {
-	font-family: "Raleway", sans-serif
-}
-
-body, html {
-	height: 100%
-}
-
-p {
-	line-height: 2
-}
-
-.bgimg, .bgimg2 {
-	min-height: 100%;
-	background-position: center;
-	background-size: cover;
-}
-
-.bgimg {
-	background-image:
-		url("https://www.w3schools.com/w3images/wedding_couple.jpg")
-}
-
-.bgimg2 {
-	background-image: url("https://www.w3schools.com/w3images/flowers.jpg")
-}
-
-/* ---------- slides -----------*/
-
-/* SlidesJS Optional: If you 'd like to use this design */
-body {
-	-webkit-font-smoothing: antialiased;
-	font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #232525;
-}
-
-#slides {
-	display: none
-}
-
-#slides .slidesjs-navigation {
-	margin-top: 5px;
-}
-
-a.slidesjs-next, a.slidesjs-previous, a.slidesjs-play, a.slidesjs-stop {
-	background-image:
-		url(/wedding/js/Slides-SlidesJS-3/examples/playing/img/btns-next-prev.png);
-	background-repeat: no-repeat;
-	display: block;
-	width: 12px;
-	height: 18px;
-	overflow: hidden;
-	text-indent: -9999px;
-	float: left;
-	margin-right: 5px;
-}
-
-a.slidesjs-next {
-	margin-right: 10px;
-	background-position: -12px 0;
-}
-
-a:hover.slidesjs-next {
-	background-position: -12px -18px;
-}
-
-a.slidesjs-previous {
-	background-position: 0 0;
-}
-
-a:hover.slidesjs-previous {
-	background-position: 0 -18px;
-}
-
-a.slidesjs-play {
-	width: 15px;
-	background-position: -25px 0;
-}
-
-a:hover.slidesjs-play {
-	background-position: -25px -18px;
-}
-
-a.slidesjs-stop {
-	width: 18px;
-	background-position: -41px 0;
-}
-
-a:hover.slidesjs-stop {
-	background-position: -41px -18px;
-}
-
-.slidesjs-pagination {
-	margin: 7px 0 0;
-	float: right;
-	list-style: none;
-}
-
-.slidesjs-pagination li {
-	float: left;
-	margin: 0 1px;
-}
-
-.slidesjs-pagination li a {
-	display: block;
-	width: 13px;
-	height: 0;
-	padding-top: 13px;
-	background-image:
-		url(/wedding/js/Slides-SlidesJS-3/examples/playing/img/pagination.png);
-	background-position: 0 0;
-	float: left;
-	overflow: hidden;
-}
-
-.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active
-	{
-	background-position: 0 -13px
-}
-
-.slidesjs-pagination li a:hover {
-	background-position: 0 -26px
-}
-
-#slides a:link, #slides a:visited {
-	color: #333
-}
-
-#slides a:hover, #slides a:active {
-	color: #9e2020
-}
-
-.navbar {
-	overflow: hidden
-}
-
-/* SlidesJS Required: These styles are required if you'd like a responsive slideshow */
-#slides {
-	display: none
-}
-
-.container {
-	margin: 0 auto
-}
-
-/* For tablets - smart phones */
-@media ( max-width : 767px) {
-	body {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-	.container {
-		width: auto
-	}
-}
-
-/* For smartphones */
-@media ( max-width : 480px) {
-	.container {
-		width: auto
-	}
-}
-
-/* For smaller displays like laptops */
-@media ( min-width : 768px) and (max-width: 979px) {
-	.container {
-		width: 724px
-	}
-}
-
-/* For larger displays */
-@media ( min-width : 1200px) {
-	.container {
-		width: 1170px
-	}
-}
-
-/* --------lightbox----------- */
-html {
-	/* killing 300ms touch delay in IE */
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
-}
-
-.is-hidden {
-	display: none;
-}
-
-.btn {
-	text-transform: uppercase;
-	color: #efefef;
-	background-color: #333;
-	padding: 0.313em 0.625em; /* 5 10 */
-}
-
-.btn:hover, .btn:focus {
-	background-color: #c00;
-}
 
-.btn:active {
-	background-color: #a00;
-}
-
-#container {
-	width: 41.25em; /* 660 */
-	text-align: center;
-	padding: 0 1.25em; /* 20 */
-	margin: 3.125em auto 6.25em; /* 50 100 */
-}
-
-#container h1 {
-	font-size: 2.125em; /* 34 */
-	line-height: 0.882em; /* 30 (34) */
-	text-transform: uppercase;
-}
-
-#container h1 span {
-	font-size: 0.588em; /* 20 (34) */
-	line-height: 1em; /* 20 (20) */
-	color: #aaa;
-	display: block;
-}
-
-#container h1 a:hover span, #container h1 a:focus span {
-	color: #333;
-}
-
-#container h2 {
-	border-top: 1px solid #ddd;
-	padding-top: 1.875em; /* 30 */
-	margin-top: 1.875em; /* 30 */
-	margin-bottom: 0.625em; /* 10 */
-}
-
-#container h2 span {
-	color: #666;
-}
-
-#container h2[data-caption]:before {
-	font-size: 0.875rem;
-	font-weight: 300;
-	color: #fff;
-	background-color: #c00;
-	display: inline-block;
-	content: attr(data-caption);
-	padding: 0.125rem 0.313rem; /* 2 5 */
-	margin-right: 0.625rem; /* 10 */
-	-webkit-transform: rotate(-8deg);
-	-ms-transform: rotate(-8deg);
-	transform: rotate(-8deg);
-}
-
-#container ul {
-	
-}
-
-#container li {
-	display: inline-block;
-	margin: 0.625em; /* 10 */
-}
-
-#container img {
-	width: 8.75em; /* 140 */
-	height: 8.75em; /* 140 */
-	border-color: #eee;
-	border: 0.625em solid rgba(255, 255, 255, .5); /* 10 */
-	-webkit-box-shadow: 0 0 0.313em rgba(0, 0, 0, .05); /* 5 */
-	box-shadow: 0 0 0.313em rgba(0, 0, 0, .05); /* 5 */
-	-webkit-transition: -webkit-box-shadow .3s ease, border-color .3s ease;
-	transition: box-shadow .3s ease, border-color .3s ease;
-}
-
-#container img:hover, #container img:focus {
-	border-color: #fff;
-	-webkit-box-shadow: 0 0 0.938em rgba(0, 0, 0, .25); /* 15 */
-	box-shadow: 0 0 0.938em rgba(0, 0, 0, .25); /* 15 */
-}
-
-footer {
-	font-size: 0.875em; /* 14 */
-	color: #aaa;
-	border-top: 1px solid #ddd;
-	padding-top: 2.143em; /* 30 (14) */
-}
-
-footer a {
-	color: #666;
-}
-
-footer a:hover, footer a:focus {
-	color: #333;
-}
-
-/* IMAGE LIGHTBOX SELECTOR */
-#imagelightbox {
-	cursor: pointer;
-	position: fixed;
-	z-index: 10000;
-	-ms-touch-action: none;
-	touch-action: none;
-	-webkit-box-shadow: 0 0 3.125em rgba(0, 0, 0, .75); /* 50 */
-	box-shadow: 0 0 3.125em rgba(0, 0, 0, .75); /* 50 */
-}
-
-/* ACTIVITY INDICATION */
-#imagelightbox-loading, #imagelightbox-loading div {
-	border-radius: 50%;
-}
-
-#imagelightbox-loading {
-	width: 2.5em; /* 40 */
-	height: 2.5em; /* 40 */
-	background-color: #444;
-	background-color: rgba(0, 0, 0, .5);
-	position: fixed;
-	z-index: 10003;
-	top: 50%;
-	left: 50%;
-	padding: 0.625em; /* 10 */
-	margin: -1.25em 0 0 -1.25em; /* 20 */
-	-webkit-box-shadow: 0 0 2.5em rgba(0, 0, 0, .75); /* 40 */
-	box-shadow: 0 0 2.5em rgba(0, 0, 0, .75); /* 40 */
-}
-
-#imagelightbox-loading div {
-	width: 1.25em; /* 20 */
-	height: 1.25em; /* 20 */
-	background-color: #fff;
-	-webkit-animation: imagelightbox-loading .5s ease infinite;
-	animation: imagelightbox-loading .5s ease infinite;
-}
-
-/* OVERLAY */
-#imagelightbox-overlay {
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, .9);
-	position: fixed;
-	z-index: 9998;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
-#imagelightbox-close:hover, #imagelightbox-close:focus {
-	background-color: #111;
-}
-
-#imagelightbox-close:before, #imagelightbox-close:after {
-	width: 2px;
-	background-color: #fff;
-	content: '';
-	position: absolute;
-	top: 20%;
-	bottom: 20%;
-	left: 50%;
-	margin-left: -1px;
-}
-
-#imagelightbox-close:before {
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-#imagelightbox-close:after {
-	-webkit-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-/* CAPTION */
-#imagelightbox-caption {
-	text-align: center;
-	color: #fff;
-	background-color: #666;
-	position: fixed;
-	z-index: 10001;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	padding: 0.625em; /* 10 */
-}
-
-/* NAVIGATION */
-#imagelightbox-nav {
-	background-color: #444;
-	background-color: rgba(0, 0, 0, .5);
-	border-radius: 20px;
-	position: fixed;
-	z-index: 10001;
-	left: 50%;
-	bottom: 3.75em; /* 60 */
-	padding: 0.313em; /* 5 */
-	-webkit-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	transform: translateX(-50%);
-}
-
-#imagelightbox-nav button {
-	width: 1em; /* 20 */
-	height: 1em; /* 20 */
-	background-color: transparent;
-	border: 1px solid #fff;
-	border-radius: 50%;
-	display: inline-block;
-	margin: 0 0.313em; /* 5 */
-}
-
-#imagelightbox-nav button.active {
-	background-color: #fff;
-}
-
-/* ARROWS */
-.imagelightbox-arrow {
-	width: 3.75em; /* 60 */
-	height: 7.5em; /* 120 */
-	background-color: #444;
-	background-color: rgba(0, 0, 0, .5);
-	vertical-align: middle;
-	display: none;
-	position: fixed;
-	z-index: 10001;
-	top: 50%;
-	margin-top: -3.75em; /* 60 */
-}
-
-.imagelightbox-arrow:hover, .imagelightbox-arrow:focus {
-	background-color: rgba(0, 0, 0, .75);
-}
-
-.imagelightbox-arrow:active {
-	background-color: #111;
-}
-
-.imagelightbox-arrow-left {
-	left: 2.5em; /* 40 */
-}
+/* font list  */
+/*font-family: 'Nanum Gothic Coding', serif;*/
+/* font-family: 'Nanum Gothic', serif; */
+/* font-family: 'Nanum Myeongjo', serif; */
+/*font-family: 'Nanum Brush Script', serif;*/
+/*font-family: 'Nanum Pen Script', serif;*/
+/*font-family: 'Hanna', serif;*/
+/* font-family: 'Jeju Hallasan', serif; */
+/* font-family: 'Noto Sans KR', sans-serif; */
 
-.imagelightbox-arrow-right {
-	right: 2.5em; /* 40 */
+/* used font */
+h1.hanna {
+	font-family: 'Hanna', serif;
 }
 
-.imagelightbox-arrow:before {
-	width: 0;
-	height: 0;
-	border: 1em solid transparent;
-	content: '';
-	display: inline-block;
-	margin-bottom: -0.125em; /* 2 */
+a.hanna {
+	font-family: 'Hanna', serif;
 }
 
-.imagelightbox-arrow-left:before {
-	border-left: none;
-	border-right-color: #fff;
-	margin-left: -0.313em; /* 5 */
+b.hanna {
+	font-family: 'Hanna', serif;
 }
 
-.imagelightbox-arrow-right:before {
-	border-right: none;
-	border-left-color: #fff;
-	margin-right: -0.313em; /* 5 */
+button.hanna {
+	font-family: 'Hanna', serif;
 }
 
-#imagelightbox-loading, #imagelightbox-overlay, #imagelightbox-close,
-	#imagelightbox-caption, #imagelightbox-nav, .imagelightbox-arrow {
-	-webkit-animation: fade-in .25s linear;
-	animation: fade-in .25s linear;
+b.pen {
+	font-family: 'Nanum Pen Script', serif;
 }
 
-@
--webkit-keyframes fade-in {from { opacity:0;
-	
-}
-
-to {
-	opacity: 1;
-}
-
-}
-@
-keyframes fade-in {from { opacity:0;
-	
-}
-
-to {
-	opacity: 1;
-}
-
-}
-@media only screen and (max-width: 41.250em) /* 660 */ {
-	#container {
-		width: 100%;
-	}
-	#imagelightbox-close {
-		top: 1.25em; /* 20 */
-		right: 1.25em; /* 20 */
-	}
-	#imagelightbox-nav {
-		bottom: 1.25em; /* 20 */
-	}
-	.imagelightbox-arrow {
-		width: 2.5em; /* 40 */
-		height: 3.75em; /* 60 */
-		margin-top: -2.75em; /* 30 */
-	}
-	.imagelightbox-arrow-left {
-		left: 1.25em; /* 20 */
-	}
-	.imagelightbox-arrow-right {
-		right: 1.25em; /* 20 */
-	}
+i.pen {
+	font-family: 'Nanum Pen Script', serif;
+	font-size: 22px;
 }
 
-@media only screen and (max-width: 20em) /* 320 */ {
-	.imagelightbox-arrow-left {
-		left: 0;
-	}
-	.imagelightbox-arrow-right {
-		right: 0;
-	}
+h1.pen {
+	font-family: 'Nanum Pen Script', serif;
+	font-size: 22px;
 }
 </style>
-
 </head>
 <body>
 
-	<!-- Header / Home-->
 	<header class="w3-display-container w3-wide bgimg w3-grayscale-min"
 		id="home">
 		<div class="w3-display-middle w3-text-white w3-center">
-			<h1 class="w3-jumbo">June &amp; Heeny</h1>
-			<h2>Are getting married</h2>
+			<h1 class="w3-xxxlarge hanna">
+				변영준<span style="color: #F83F53;">♥</span>임희은
+			</h1>
+			<!-- <h2 class="hanna">Are getting married</h2> -->
 			<h2>
-				<b>11.11.2017</b>
+				<b>2017.12.03</b>
 			</h2>
 		</div>
 	</header>
+
+
 
 	<!-- Navbar (sticky bottom) -->
 	<div class="w3-bottom w3-hide-small">
@@ -593,10 +118,19 @@ to {
 		id="us">
 		<div class="w3-content">
 			<h1 class="w3-center w3-text-grey">
-				<b>Youngjun Byeon <span style="color: #F83F53;">♥</span> Heeeun
-					Lim
-				</b>
+				<b class="pen"><span style="color: #F83F53;">[</span> 영준이와 희은이 <span
+					style="color: #F83F53;">]</span> </b>
+				<!-- <b class="">Youngjun Byeon <span style="color: #F83F53;">&amp;</span>
+					Heeeun Lim
+				</b> -->
 			</h1>
+
+			<p class="w3-center">
+				<i class="pen">평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며<br />사랑
+					베풀며 살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어
+					주십시오.
+				</i>
+			</p>
 
 			<!-- img -->
 			<!-- <img class="w3-round w3-grayscale-min"
@@ -622,18 +156,12 @@ to {
 			</div>
 
 
-			<p>
-				<i>You all know us. And we all know you. We are getting married
-					lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-					ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat
-					non proident, sunt in culpa qui officia deserunt mollit anim id est
-					laborum consectetur adipiscing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-					veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-					ex ea commodo consequat.</i>
-			</p>
+			<!-- <p class="w3-center">
+				<i class="pen">평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며<br />사랑
+					베풀며 살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어
+					주십시오.
+				</i>
+			</p> -->
 			<br />
 			<p class="w3-center">
 				<a href="#GALLERY"
@@ -644,13 +172,23 @@ to {
 	</div>
 
 	<!-- Background photo -->
-	<div class="w3-display-container bgimg2">
+	<!-- <div class="w3-display-container bgimg2">
 		<div class="w3-display-middle w3-text-white w3-center">
 			<h1 class="w3-jumbo">You Are Invited</h1>
 			<br />
 			<h2>Of course !!</h2>
 		</div>
+	</div> -->
+
+	<!-- Background photo -->
+	<div class="w3-display-container bgimg2">
+		<div class="w3-display-middle w3-text-white w3-center">
+			<h1 class="w3-jumbo hanna">
+				당신을 초대<br />합니다
+			</h1>
+		</div>
 	</div>
+
 
 	<!-- Wedding information -->
 	<div
@@ -682,7 +220,90 @@ to {
 		</div>
 	</div>
 
-	<div class="w3-container w3-padding-64 w3-teal w3-center" id="map">
+	<!-- RSVP section -->
+	<div class="w3-container w3-padding-64 w3-pale-red w3-center w3-wide"
+		id="rsvp">
+		<h1 class="pen w3-xxxlarge">참석해주실거죠?</h1>
+
+		<p class="w3-xlarge">
+			<button
+				onclick="document.getElementById('id01').style.display='block'"
+				class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off"
+				style="padding: 8px 60px">응답</button>
+		</p>
+
+		<br /> <br />
+		<!-- <p class="gothic">여러분의  해주세요</p> -->
+	</div>
+
+	<!-- RSVP modal -->
+	<div id="id01" class="w3-modal">
+		<div class="w3-modal-content w3-card-4 w3-animate-zoom"
+			style="padding: 32px; max-width: 600px">
+			<div class="w3-container w3-white w3-center">
+				<!-- <h1 class="w3-wide hanna">?</h1> -->
+				<br />
+				<p>함께 즐거운 시간 보내요.</p>
+				<p>
+					<i>June &amp; Heeny</i>
+				</p>
+				<br />
+
+				<form>
+					<input class="w3-input w3-border" type="text"
+						placeholder="이름을 적어주세요" name="name" />
+				</form>
+				<br />
+				<div class="w3-row">
+					<div class="w3-half">
+						<button
+							onclick="document.getElementById('id01').style.display='none'"
+							type="button" class="w3-button w3-block w3-green hanna">네.
+							물론이죠 !</button>
+					</div>
+					<div class="w3-half">
+						<button
+							onclick="document.getElementById('id01').style.display='none'"
+							type="button" class="w3-button w3-block w3-red hanna">아니요.
+							안갑니다.</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- RSVP modal -->
+	<!-- 	<div id="id01" class="w3-modal">
+		<div class="w3-modal-content w3-card-4 w3-animate-zoom"
+			style="padding: 32px; max-width: 600px">
+			<div class="w3-container w3-white w3-center">
+				<h1 class="w3-wide">오실거죠?</h1>
+				<p>우리는 당신을 기다리고 있겠습니다.</p>
+				<form>
+					<input class="w3-input w3-border" type="text" placeholder="Name(s)"
+						name="name" />
+				</form>
+				<p>
+					<i>Sincerely, June &amp; Heeny</i>
+				</p>
+				<div class="w3-row">
+					<div class="w3-half">
+						<button
+							onclick="document.getElementById('id01').style.display='none'"
+							type="button" class="w3-button w3-block w3-green">Going</button>
+					</div>
+					<div class="w3-half">
+						<button
+							onclick="document.getElementById('id01').style.display='none'"
+							type="button" class="w3-button w3-block w3-red">Can't
+							come</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="w3-container w3-padding-64 w3-gray w3-center" id="map">
 		<div class="w3-content">
 			<h1 class="w3-text-black">
 				<b>THE LOCATION</b>
@@ -737,8 +358,8 @@ to {
 </body>
 
 <script type="text/javascript">
-	var latitude = 37.577405;
-	var longitude = 126.984274;
+	var latitude = 37.502363;
+	var longitude = 127.031588;
 
 	google.maps.event.addDomListener(window, 'load', Map.prototype
 			.initializeGoogleMap(latitude, longitude));
