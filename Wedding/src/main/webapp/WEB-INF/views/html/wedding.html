@@ -9,8 +9,11 @@
 <script th:src="@{/js/jquery-1.10.2.js}"></script>
 
 <!-- custom js -->
-<script th:src="@{/js/map.js}"></script>
 <script th:src="@{/js/imageLightbox.js}"></script>
+
+<script th:src="@{/js/map.js}"></script>
+<script th:src="@{/js/handler.js}"></script>
+<script th:src="@{/js/rsvp.js}"></script>
 
 <!-- slides js -->
 <script th:src="@{/js/Slides-SlidesJS-3/source/jquery.slides.js}"></script>
@@ -85,6 +88,15 @@ h1.pen {
 h2.pen {
 	font-family: 'Nanum Pen Script', serif;
 	font-size: 22px;
+}
+
+p.pen {
+	font-family: 'Nanum Pen Script', serif;
+	font-size: 22px;
+}
+
+p.gothic {
+	font-family: 'Nanum Gothic', serif;
 }
 </style>
 </head>
@@ -200,30 +212,29 @@ h2.pen {
 			style="padding: 32px; max-width: 600px">
 			<div class="w3-container w3-white w3-center">
 				<!-- <h1 class="w3-wide hanna">?</h1> -->
+				<div id="msg_div" class="w3-panel w3-pale-red w3-round-large"
+					style="display: none;">
+					<p id="msg" class="pen"></p>
+				</div>
+
 				<br />
 				<p>함께 즐거운 시간 보내요.</p>
 				<p>
 					<i>June &amp; Heeny</i>
 				</p>
-				<br />
 
-				<form>
-					<input class="w3-input w3-border" type="text"
-						placeholder="이름을 적어주세요" name="name" />
-				</form>
-				<br />
+				<input class="w3-input w3-border" type="text"
+					placeholder="이름을 적어주세요" id="name" /> <br />
+
+
 				<div class="w3-row">
 					<div class="w3-half">
-						<button
-							onclick="document.getElementById('id01').style.display='none'"
-							type="button" class="w3-button w3-block w3-green hanna">네.
-							물론이죠!</button>
+						<button id="yes" type="button"
+							class="w3-button w3-block w3-green hanna">네. 물론이죠!</button>
 					</div>
 					<div class="w3-half">
-						<button
-							onclick="document.getElementById('id01').style.display='none'"
-							type="button" class="w3-button w3-block w3-red hanna">아니요.
-							안갑니다.</button>
+						<button id="no" type="button"
+							class="w3-button w3-block w3-red hanna">아니요. 안갑니다.</button>
 					</div>
 				</div>
 			</div>
@@ -244,6 +255,9 @@ h2.pen {
 				style="width: 100%; margin: 20px 0" />
 
 
+			<!-- 주소: 서울특별시 강남구 역삼1동 633-31
+연락처: 02-562-6936 -->
+
 			<div class="w3-row">
 				<div class="w3-half">
 					<h2 class="pen">When</h2>
@@ -252,8 +266,7 @@ h2.pen {
 				</div>
 				<div class="w3-half">
 					<h2 class="pen">Where</h2>
-					<p>Some place, an address</p>
-					<p>Some where, some address</p>
+					<p>서울특별시 강남구 역삼1동 633-31</p>
 				</div>
 			</div>
 		</div>

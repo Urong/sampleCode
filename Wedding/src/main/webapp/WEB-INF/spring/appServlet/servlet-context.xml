@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:beans="http://www.springframework.org/schema/beans"
-	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:task="http://www.springframework.org/schema/task"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
@@ -12,7 +11,7 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 	<context:component-scan base-package="com.urong.wedding" />
-	
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>
@@ -44,15 +43,28 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".html" />
 		<beans:property name="templateMode" value="HTML5" />
-		<beans:property name="cacheable" value="false"></beans:property>
-		<beans:property name="characterEncoding" value="UTF-8"></beans:property>
-		<beans:property name="order">
-			<beans:value>1</beans:value>
-		</beans:property>
+		<beans:property name="cacheable" value="false" />
+		<beans:property name="characterEncoding" value="UTF-8" />
+		<beans:property name="order" value="2" />
+	</beans:bean>
+
+	<beans:bean id="emailTemplateResolver"
+		class="org.thymeleaf.templateresolver.ClassLoaderTemplateResolver">
+		<beans:property name="prefix" value="templates/" />
+		<beans:property name="suffix" value=".html" />
+		<beans:property name="templateMode" value="HTML5" />
+		<beans:property name="characterEncoding" value="UTF-8" />
+		<beans:property name="cacheable" value="false" />
+		<beans:property name="order" value="1" />
 	</beans:bean>
 
 	<beans:bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
-		<beans:property name="templateResolver" ref="templateResolver" />
+		<beans:property name="templateResolvers">
+			<beans:set>
+				<beans:ref bean="templateResolver" />
+				<beans:ref bean="emailTemplateResolver" />
+			</beans:set>
+		</beans:property>
 		<beans:property name="additionalDialects">
 			<beans:set>
 				<beans:bean
@@ -63,7 +75,7 @@
 
 	<beans:bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
 		<beans:property name="templateEngine" ref="templateEngine" />
-		<beans:property name="characterEncoding" value="UTF-8"></beans:property>
+		<beans:property name="characterEncoding" value="UTF-8" />
 	</beans:bean>
 
 

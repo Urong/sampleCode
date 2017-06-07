@@ -19,7 +19,7 @@ Map.prototype.initializeGoogleMap = function(latitude, longtitude) {
 			position : map.getCenter(),
 		});
 
-		var contentString = '서울 종로구 북촌로 1길 30-4 <br/>(안국동 75-1)';
+		var contentString = '서울특별시 강남구 역삼1동 633-31';
 
 		var infowindow = new google.maps.InfoWindow({
 			content : contentString
