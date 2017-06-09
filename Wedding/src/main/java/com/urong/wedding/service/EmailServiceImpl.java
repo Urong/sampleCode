@@ -16,6 +16,7 @@ import javax.mail.internet.MimeMessage;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -44,6 +45,7 @@ public class EmailServiceImpl extends Authenticator implements EmailService {
 		return pa;
 	}
 
+	@Async
 	@Override
 	public void sendMail(User user, String subject, String text) {
 		Properties p = System.getProperties();
@@ -81,6 +83,7 @@ public class EmailServiceImpl extends Authenticator implements EmailService {
 		}
 	}
 
+	@Async
 	@Override
 	public void sendMailByRecipients(List<User> users, String subject, String htmlContent) throws MessagingException {
 		Properties p = System.getProperties();
