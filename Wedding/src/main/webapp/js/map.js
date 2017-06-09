@@ -19,7 +19,7 @@ Map.prototype.initializeGoogleMap = function(latitude, longtitude) {
 			position : map.getCenter(),
 		});
 
-		var contentString = '서울특별시 강남구 역삼1동 633-31';
+		var contentString = '서울특별시 강남구<br/>역삼1동 633-31 아모르하우스';
 
 		var infowindow = new google.maps.InfoWindow({
 			content : contentString
