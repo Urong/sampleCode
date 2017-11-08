@@ -9,5 +9,5 @@ $(document).ready(function() {
 	$("#no").click(function(e) {
 		rsvp.confirmRsvp("X");
 	});
-
+	
 });
