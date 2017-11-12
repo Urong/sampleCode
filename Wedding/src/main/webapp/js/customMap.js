@@ -1,7 +1,7 @@
-var Map = function() {
+var CustomMap = function() {
 };
 
-Map.prototype.initializeGoogleMap = function(latitude, longtitude) {
+CustomMap.prototype.initializeGoogleMap = function(latitude, longtitude) {
 	if ($("#google_map").length) {
 
 		var mapOptions = {
@@ -15,19 +15,20 @@ Map.prototype.initializeGoogleMap = function(latitude, longtitude) {
 
 		var marker = new google.maps.Marker({
 			map : map,
-			animation : google.maps.Animation.DROP,
+			// animation : google.maps.Animation.DROP,
 			position : map.getCenter(),
 		});
 
-		var contentString = '서울특별시 강남구 역삼1동 633-31';
+		var contentString = '서울특별시 강남구<br/>역삼1동 633-31 아모르하우스';
 
 		var infowindow = new google.maps.InfoWindow({
 			content : contentString
 		});
 
-		marker.addListener('click', function() {
-			infowindow.open(map, marker);
-		});
+		infowindow.open(map, marker);
+		// marker.addListener('click', function() {
+		// infowindow.open(map, marker);
+		// });
 
 		google.maps.event.addDomListener(map, "idle", function() {
 
@@ -35,9 +36,8 @@ Map.prototype.initializeGoogleMap = function(latitude, longtitude) {
 			google.maps.event.trigger(map, "resize");
 			map.setCenter(center);
 
-			marker.setAnimation(google.maps.Animation.BOUNCE);
+			// marker.setAnimation(google.maps.Animation.BOUNCE);
 
 		});
-
 	}
 };

@@ -78,6 +78,15 @@
 		<beans:property name="characterEncoding" value="UTF-8" />
 	</beans:bean>
 
+	<!-- task -->
+	<task:annotation-driven executor="threadPoolTaskExecutor"
+		scheduler="serverScheduler" />
+
+	<task:executor id="threadPoolTaskExecutor" pool-size="2"
+		queue-capacity="100" rejection-policy="DISCARD" />
+
+	<task:scheduler id="serverScheduler" pool-size="1" />
+
 
 
 </beans:beans>
