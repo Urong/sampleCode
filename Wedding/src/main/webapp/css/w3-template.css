@@ -16,10 +16,10 @@ p {
 	background-position: center;
 	background-size: cover;
 }
-
+/* url("https://www.w3schools.com/w3images/wedding_couple.jpg") */
 .bgimg {
 	background-image:
-		url("https://www.w3schools.com/w3images/wedding_couple.jpg")
+		url("http://www.localhost:8080/wedding/img/g1.jpg")
 }
 
 .bgimg2 {

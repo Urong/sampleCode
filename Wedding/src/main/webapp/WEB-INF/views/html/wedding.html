@@ -9,7 +9,7 @@
 <!-- <meta name="robots" content="noindex,nofollow" /> -->
 
 <meta property="og:title" content="2017.12.03 변영준 ♥ 임희은" />
-<meta property="og:image"
+<meta property="og:image" th:content="@{/img/j3.jpg}"
 	content="https://www.w3schools.com/w3images/wedding_couple.jpg" />
 <meta property="og:description"
 	content="평생을 같이하고 싶은 사람을 만났습니다. 서로 아껴주고 이해하며 사랑
@@ -23,27 +23,15 @@
 
 <!-- custom js -->
 <script th:src="@{/js/imageLightbox.js}"></script>
+<script th:src="@{/js/scrolla.jquery.js}"></script>
 
 <script th:src="@{/js/customMap.js}"></script>
 <script th:src="@{/js/handler.js}"></script>
 <script th:src="@{/js/rsvp.js}"></script>
 
-<!-- slides js -->
-<script th:src="@{/js/Slides-SlidesJS-3/source/jquery.slides.js}"></script>
-
-<!-- angular js -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
 <!--  google map -->
 <script th:inline="javascript"
 	src="https://maps.google.com/maps/api/js?key=AIzaSyB1hGom7-8OMDFXEe1NKOF-KYnLa3Fa5rU"></script>
-
-<!-- sildes -->
-<!-- <link rel="stylesheet"
-	th:src="@{/js/Slides-SlidesJS-3/examples/playing/css/example.css}" />
-<link rel="stylesheet"
-	th:src="@{/js/Slides-SlidesJS-3/examples/playing/css/font-awesome.min.css}" /> -->
 
 <!-- css -->
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css" />
@@ -51,6 +39,7 @@
 	href="https://fonts.googleapis.com/css?family=Raleway" />
 
 <link rel="stylesheet" th:href="@{/css/w3-template.css}" />
+<link rel="stylesheet" th:href="@{/css/animate.css}" />
 
 <!-- font -->
 <link rel="stylesheet" th:href="@{/font/font.css}" />
@@ -59,16 +48,6 @@
 <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.ico}" />
 
 <style>
-
-/* font list  */
-/*font-family: 'Nanum Gothic Coding', serif;*/
-/* font-family: 'Nanum Gothic', serif; */
-/* font-family: 'Nanum Myeongjo', serif; */
-/*font-family: 'Nanum Brush Script', serif;*/
-/*font-family: 'Nanum Pen Script', serif;*/
-/*font-family: 'Hanna', serif;*/
-/* font-family: 'Jeju Hallasan', serif; */
-/* font-family: 'Noto Sans KR', sans-serif; */
 
 /* used font */
 h1.hanna {
@@ -118,14 +97,12 @@ p.gothic {
 </head>
 <body>
 
-	<!-- https://www.w3schools.com/w3images/wedding_couple.jpg  -->
 	<header class="w3-display-container w3-wide bgimg w3-grayscale-min"
 		id="home">
-		<div class="w3-display-middle w3-text-white w3-center">
+		<div class="w3-display-bottommiddle w3-text-white w3-center">
 			<h1 class="w3-xxxlarge hanna">
 				변영준<span style="color: #F83F53;">♥</span>임희은
 			</h1>
-			<!-- <h2 class="hanna">Are getting married</h2> -->
 			<h2>
 				<b>2017.12.03</b>
 			</h2>
@@ -151,45 +128,13 @@ p.gothic {
 	<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min"
 		id="us">
 		<div class="w3-content">
-			<h1 class="w3-center w3-text-grey">
-				<b class="pen"><span style="color: #F83F53;">[</span> 영준이와 희은이 <span
-					style="color: #F83F53;">]</span> </b>
-				<!-- <b class="">Youngjun Byeon <span style="color: #F83F53;">&amp;</span>
-					Heeeun Lim
-				</b> -->
-			</h1>
 			<p class="w3-center">
-				<i class="pen">평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며<br />사랑
-					베풀며 살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어
-					주십시오.
+				<i class="pen"> 평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며 사랑 베풀며
+					살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어 주십시오.
 				</i>
 			</p>
-
-			<!-- img -->
-			<!-- <img class="w3-round w3-grayscale-min"
-				src="https://www.w3schools.com/w3images/wedding_couple2.jpg"
-				style="width: 100%; margin: 32px 0" /> -->
-
-			<!-- The container is used to define the width of the slideshow -->
-			<div class="w3-round w3-grayscale-min" id="picture">
-				<div id="slides">
-					<img src="http://www.flickr.com/photos/listenmissy/5087404401/"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}"
-						style="width: 100%; margin: 32px 0" /> <img
-						src="http://www.flickr.com/photos/parksdh/5227623068/"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
-						style="width: 100%; margin: 32px 0" /> <img
-						src="http://www.flickr.com/photos/27874907@N04/4833059991/"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
-						style="width: 100%; margin: 32px 0" /><img
-						src="http://www.flickr.com/photos/stuseeger/97577796/"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
-						style="width: 100%; margin: 32px 0" />
-				</div>
-			</div>
-
-			<br />
-			<p class="w3-center">
+			<br /> <br />
+			<p class="w3-center scrolla" data-animate="rubberBand">
 				<a href="#GALLERY"
 					class="w3-button w3-black w3-round w3-padding-large w3-large">사진
 					더 보기</a>
@@ -214,7 +159,7 @@ p.gothic {
 		<p class="gothic">
 			작은 결혼식이기 때문에<br />여러분의 참석여부 확인이 필요합니다.
 		</p>
-		<p class="w3-xlarge">
+		<p class="w3-xlarge scrolla" data-animate="rubberBand">
 			<button
 				onclick="document.getElementById('id01').style.display='block'"
 				class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off"
@@ -263,23 +208,21 @@ p.gothic {
 		class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center"
 		id="wedding">
 		<div class="w3-content">
-			<h1 class="w3-text-black">
-				<b class="pen">장소 </b>
-			</h1>
+			<h1 class="w3-text-black hanna">장소</h1>
+
+			<!-- src="https://www.w3schools.com/w3images/wedding_location.jpg" -->
 			<!-- img -->
 			<img class="w3-round-large w3-grayscale-min"
-				src="https://www.w3schools.com/w3images/wedding_location.jpg"
-				style="width: 100%; margin: 20px 0" />
+				th:src="@{/img/amor3.JPG}" style="width: 100%; margin: 20px 0" />
 
 
 			<div class="w3-row">
 				<div class="w3-half">
-					<h2 class="pen">When</h2>
+					<h2 class="hanna">When</h2>
 					<p>Wedding Ceremony - 1:00pm</p>
-					<p>Reception &amp; Lunch - 3:00pm</p>
 				</div>
 				<div class="w3-half">
-					<h2 class="pen">Where</h2>
+					<h2 class="hanna">Where</h2>
 					<p>서울특별시 강남구 역삼1동 633-31 아모르하우스</p>
 				</div>
 			</div>
@@ -292,9 +235,7 @@ p.gothic {
 		class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min w3-center"
 		id="map">
 		<div class="w3-content">
-			<h1 class="w3-text-black">
-				<b class="pen">위치</b>
-			</h1>
+			<h1 class="w3-text-black hanna">위치</h1>
 			<!-- map -->
 			<div id="google_map" class="w3-round-large w3-grayscale-min "
 				style="width: 100%; height: 500px; margin: 20px 0;"></div>
@@ -304,28 +245,70 @@ p.gothic {
 	<div class="w3-container w3-padding-64 w3-pale-red w3-center"
 		id="GALLERY">
 		<div class="w3-content">
-			<h1 class="w3-text-black">
-				<b class="pen">사진</b>
-			</h1>
-		</div>
-		<div id="container">
-			<ul>
-				<li><a
-					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
-					data-imagelightbox="b"><img src="thumb/4.jpg"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
-						alt="Sun, grass and hydrant" /></a></li>
-				<li><a
-					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
-					data-imagelightbox="b"><img src="thumb/5.jpg"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
-						alt="Bridge over the railway" /></a></li>
-				<li><a
-					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
-					data-imagelightbox="b"><img src="thumb/6.jpg"
-						th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
-						alt="Railway light" /></a></li>
-			</ul>
+			<h1 class="w3-text-black hanna">사진</h1>
+
+			<div id="container">
+
+				<ul class="w3-center scrolla" data-animate="fadeIn">
+					<li><a th:href="@{/img/a1.jpg}" data-imagelightbox="b"><img
+							th:src="@{/img/j3.jpg}" style="width: 100%; height: 100%" /></a></li>
+					<li><a th:href="@{/img/a2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/b1.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/c1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/c2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/c3.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/c4.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/d1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/d2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/d3.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/d4.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/d5.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/d6.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/e1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/e2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/e3.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/f1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/f2.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/g1.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/h1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/h2.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/i1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/i2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/i3.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/j1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/j2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/j3.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/k1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/k2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/k3.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/k4.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/k5.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/k6.jpg}" data-imagelightbox="b"></a></li>
+
+					<li><a th:href="@{/img/l1.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/l2.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/l3.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/l4.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/l5.jpg}" data-imagelightbox="b"></a></li>
+					<li><a th:href="@{/img/l6.jpg}" data-imagelightbox="b"></a></li>
+
+				</ul>
+
+			</div>
+			<p class="w3-xlarge">
+				<a th:href="@{/img/a1.jpg}" data-imagelightbox="b"><button
+						class="w3-button w3-round w3-red w3-opacity"
+						style="padding: 8px 60px">사진 클릭</button></a>
+			</p>
 		</div>
 	</div>
 
@@ -337,7 +320,6 @@ p.gothic {
 		</p>
 	</footer>
 	<div class="w3-hide-small" style="margin-bottom: 32px"> </div>
-
 </body>
 
 <script type="text/javascript">
@@ -346,19 +328,6 @@ p.gothic {
 
 	google.maps.event.addDomListener(window, 'load', CustomMap.prototype
 			.initializeGoogleMap(latitude, longitude));
-
-	// --------------
-
-	$('#slides').slidesjs({
-		/* 	width : 940,
-			height : 528, */
-		play : {
-			active : true,
-			auto : true,
-			interval : 4000,
-			swap : true
-		}
-	});
 
 	// ------ imagelightbox ------
 	$('a[data-imagelightbox="b"]').imageLightbox(
@@ -369,20 +338,18 @@ p.gothic {
 							.appendTo('body');
 				},
 				onEnd : function() {
-					// overlayOff();
 					$('#imagelightbox-overlay').remove();
-					// activityIndicatorOff();
 					$('#imagelightbox-loading').remove();
 				},
 				onLoadStart : function() {
-					// activityIndicatorOn();
 					$('<div id="imagelightbox-loading"><div></div></div>')
 							.appendTo('body');
 				},
 				onLoadEnd : function() {
-					// activityIndicatorOff();
 					$('#imagelightbox-loading').remove();
 				}
 			});
+	// --------- scrolla --------
+	$('.scrolla').scrolla();
 </script>
 </html>
