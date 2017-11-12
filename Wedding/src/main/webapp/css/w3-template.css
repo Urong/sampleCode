@@ -18,8 +18,7 @@ p {
 }
 /* url("https://www.w3schools.com/w3images/wedding_couple.jpg") */
 .bgimg {
-	background-image:
-		url("http://www.localhost:8080/wedding/img/g1.jpg")
+	background-image: url("http://52.79.72.223:8080/wedding/img/g1.jpg")
 }
 
 .bgimg2 {
