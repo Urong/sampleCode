@@ -39,7 +39,7 @@
 		<div id="container">
 
 			<div>
-				<a
+				<a class="aLazy"
 					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}"
 					data-imagelightbox="b"><img
 					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}"
@@ -47,11 +47,11 @@
 
 
 				<!-- another -->
-				<a
+				<a class="aLazy"
 					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
-					data-imagelightbox="b"></a> <a
+					data-imagelightbox="b"></a> <a class="aLazy"
 					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
-					data-imagelightbox="b"></a> <a
+					data-imagelightbox="b"></a> <a class="aLazy"
 					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
 					data-imagelightbox="b"></a>
 			</div>
@@ -104,5 +104,9 @@
 					$('#imagelightbox-loading').remove();
 				}
 			});
+
+	$('.aLazy').lazyload({
+		placeholder : "/wedding/img/spinner.gif"
+	});
 </script>
 </html>
