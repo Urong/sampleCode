@@ -9,18 +9,6 @@
 <!-- <meta name="robots" content="noindex,nofollow" /> -->
 
 <title>test</title>
-
-<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
-
-<!-- custom js -->
-<script th:src="@{/js/imageLightbox.js}"></script>
-<script th:src="@{/js/scrolla.jquery.js}"></script>
-<script th:src="@{/js/jquery_lazyload/jquery.lazyload.js}"></script>
-
-<script th:src="@{/js/customMap.js}"></script>
-<script th:src="@{/js/handler.js}"></script>
-<script th:src="@{/js/rsvp.js}"></script>
-
 <!-- css -->
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css" />
 <link rel="stylesheet"
@@ -28,9 +16,30 @@
 
 <link rel="stylesheet" th:href="@{/css/w3-template.css}" />
 <link rel="stylesheet" th:href="@{/css/animate.css}" />
+<link rel="stylesheet"
+	th:href="@{/js/lightGallery-master/src/css/lightgallery.css}" />
 
 <!-- font -->
 <link rel="stylesheet" th:href="@{/font/font.css}" />
+
+<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
+
+<!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<!-- custom js -->
+<script th:src="@{/js/imageLightbox.js}"></script>
+<script th:src="@{/js/lightGallery-master/src/js/lightgallery.js}"></script>
+<script th:src="@{/js/scrolla.jquery.js}"></script>
+<script th:src="@{/js/jquery_lazyload/jquery.lazyload.js}"></script>
+
+<!-- lightgallery plugins -->
+<script th:src="@{/js/lightGallery-master/modules/lg-thumbnail.min.js}"></script>
+<script th:src="@{/js/lightGallery-master/modules/lg-fullscreen.min.js}"></script>
+
+<script th:src="@{/js/customMap.js}"></script>
+<script th:src="@{/js/handler.js}"></script>
+<script th:src="@{/js/rsvp.js}"></script>
 </head>
 <body>
 
@@ -60,7 +69,25 @@
 	</div>
 
 	<div class="w3-content">
-		<h1>새로 할 이미지 방식</h1>
+		<h1>새로 할 이미지 방식1</h1>
+		<div id="container">
+			<div id="lightgallery">
+				<a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}">
+					<img
+					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}" />
+				</a> <a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}">
+					<img
+					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}" />
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="w3-content">
+		<h1>새로 할 이미지 방식2</h1>
 		<div id="container">
 
 			<div id="img_box"></div>
@@ -107,6 +134,12 @@
 
 	$('.aLazy').lazyload({
 		placeholder : "/wedding/img/spinner.gif"
+	});
+
+	$(document).ready(function() {
+		$("#lightgallery").lightGallery({
+			thumbnail : true
+		});
 	});
 </script>
 </html>
