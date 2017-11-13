@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- 크롤링 -->
+<!-- <meta name="robots" content="noindex,nofollow" /> -->
+
+
+<title>Wedding</title>
+
+<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
+
+<!-- custom js -->
+<script th:src="@{/js/imageLightbox.js}"></script>
+<script th:src="@{/js/scrolla.jquery.js}"></script>
+
+<script th:src="@{/js/customMap.js}"></script>
+<script th:src="@{/js/handler.js}"></script>
+<script th:src="@{/js/rsvp.js}"></script>
+
+<!-- css -->
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway" />
+
+<link rel="stylesheet" th:href="@{/css/w3-template.css}" />
+<link rel="stylesheet" th:href="@{/css/animate.css}" />
+
+<!-- font -->
+<link rel="stylesheet" th:href="@{/font/font.css}" />
+
+</head>
+<body>
+
+	<div class="w3-content">
+
+		<div id="container">
+
+			<div>
+				<a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}"
+					data-imagelightbox="b"><img
+					th:src="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-1.jpg}"
+					style="width: 100%; height: 100%" /></a>
+
+
+				<!-- another -->
+				<a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-2.jpg}"
+					data-imagelightbox="b"></a> <a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-3.jpg}"
+					data-imagelightbox="b"></a> <a
+					th:href="@{/js/Slides-SlidesJS-3/examples/playing/img/example-slide-4.jpg}"
+					data-imagelightbox="b"></a>
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+
+<script type="text/javascript">
+	// ------ imagelightbox ------
+	$('a[data-imagelightbox="b"]').imageLightbox(
+			{
+				animationSpeed : 100,
+				preloadNext : true,
+				quitOnDocClick : true,
+				onStart : function() {
+					$('<div id="imagelightbox-overlay"></div>')
+							.appendTo('body');
+				},
+				onEnd : function() {
+					$('#imagelightbox-overlay').remove();
+					$('#imagelightbox-loading').remove();
+				},
+				onLoadStart : function() {
+					$('<div id="imagelightbox-loading"><div></div></div>')
+							.appendTo('body');
+				},
+				onLoadEnd : function() {
+					$('#imagelightbox-loading').remove();
+				}
+			});
+</script>
+</html>

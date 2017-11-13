@@ -19,7 +19,7 @@
 
 <title>Wedding</title>
 
-<script th:src="@{/js/jquery-1.10.2.js}"></script>
+<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
 
 <!-- custom js -->
 <script th:src="@{/js/imageLightbox.js}"></script>
@@ -324,6 +324,9 @@ p.gothic {
 	// ------ imagelightbox ------
 	$('a[data-imagelightbox="b"]').imageLightbox(
 			{
+				animationSpeed : 100,
+				preloadNext : true,
+				quitOnDocClick : true,
 				onStart : function() {
 					// overlayOn();
 					$('<div id="imagelightbox-overlay"></div>')

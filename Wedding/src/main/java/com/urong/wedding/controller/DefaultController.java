@@ -40,6 +40,14 @@ public class DefaultController {
 		return mav;
 	}
 
+	@RequestMapping(value = "/view/test")
+	public ModelAndView showTestView(ModelAndView mav) {
+
+		mav.setViewName("html/test");
+
+		return mav;
+	}
+
 	@RequestMapping(value = "/rsvp", method = RequestMethod.POST)
 	public @ResponseBody String confirmRsvp(@RequestBody Rsvp rsvp) {
 
