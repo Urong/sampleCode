@@ -19,16 +19,6 @@
 
 <title>Wedding</title>
 
-<script th:src="@{/js/jquery-2.2.4.min.js}"></script>
-
-<!-- custom js -->
-<script th:src="@{/js/imageLightbox.js}"></script>
-<script th:src="@{/js/scrolla.jquery.js}"></script>
-
-<script th:src="@{/js/customMap.js}"></script>
-<script th:src="@{/js/handler.js}"></script>
-<script th:src="@{/js/rsvp.js}"></script>
-
 <!--  google map -->
 <script th:inline="javascript"
 	src="https://maps.google.com/maps/api/js?key=AIzaSyB1hGom7-8OMDFXEe1NKOF-KYnLa3Fa5rU"></script>
@@ -47,7 +37,21 @@
 <!-- favicon -->
 <link rel="icon" type="image/x-icon" th:href="@{/img/favicon.ico}" />
 
+<script th:src="@{/js/jquery-1.10.2.js}"></script>
+
+<!-- custom js -->
+<script th:src="@{/js/imageLightbox.js}"></script>
+<script th:src="@{/js/scrolla.jquery.js}"></script>
+
+<script th:src="@{/js/customMap.js}"></script>
+<script th:src="@{/js/handler.js}"></script>
+<script th:src="@{/js/rsvp.js}"></script>
+
 <style>
+.resize {
+	max-width: 50%;
+	max-height: 50%;
+}
 
 /* used font */
 h1.hanna {
@@ -250,12 +254,11 @@ p.gothic {
 			<div id="container">
 
 				<div>
-					<a th:href="@{/img/b2.jpg}" data-imagelightbox="b"><img
-						th:src="@{/img/j3.jpg}" style="width: 100%; height: 100%" /></a> <a
-						th:href="@{/img/b3.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a1.jpg}" data-imagelightbox="b"></a> <a
+					<a th:href="@{/img/a1.jpg}" data-imagelightbox="b"><img
+						th:src="@{/img/main2.jpg}" style="width: 100%; height: 100%" /></a> <a
 						th:href="@{/img/a2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/b1.jpg}" data-imagelightbox="b"></a> <a
+						th:href="@{/img/b2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/c1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/c2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/c3.jpg}" data-imagelightbox="b"></a> <a
@@ -265,39 +268,33 @@ p.gothic {
 						th:href="@{/img/d3.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/d4.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/d5.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/d6.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/e1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/e2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/e3.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/f1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/f2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/g1.jpg}" data-imagelightbox="b"></a> <a
+						th:href="@{/img/g2.jpg}" data-imagelightbox="b"></a><a
+						th:href="@{/img/g3.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/h1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/h2.jpg}" data-imagelightbox="b"></a> <a
+						th:href="@{/img/h3.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/i1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/i2.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/i3.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/j1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/j2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/j3.jpg}" data-imagelightbox="b"></a> <a
+						th:href="@{/img/j4.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/k1.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/k2.jpg}" data-imagelightbox="b"></a> <a
 						th:href="@{/img/k3.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/k4.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/k5.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/k6.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/l1.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/l2.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/l3.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/l4.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/l5.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/l6.jpg}" data-imagelightbox="b"></a>
+						th:href="@{/img/k4.jpg}" data-imagelightbox="b"></a>
 
 				</div>
 
 			</div>
 			<p class="w3-xlarge">
-				<a th:href="@{/img/b2.jpg}" data-imagelightbox="b"><button
+				<a th:href="@{/img/a1.jpg}" data-imagelightbox="b"><button
 						class="w3-button w3-round w3-red w3-opacity"
 						style="padding: 8px 60px">사진 클릭</button></a>
 			</p>
@@ -324,11 +321,10 @@ p.gothic {
 	// ------ imagelightbox ------
 	$('a[data-imagelightbox="b"]').imageLightbox(
 			{
-				animationSpeed : 100,
+				animationSpeed : 250,
 				preloadNext : true,
 				quitOnDocClick : true,
 				onStart : function() {
-					// overlayOn();
 					$('<div id="imagelightbox-overlay"></div>')
 							.appendTo('body');
 				},
