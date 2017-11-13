@@ -8,14 +8,14 @@
 <!-- 크롤링 -->
 <!-- <meta name="robots" content="noindex,nofollow" /> -->
 
-
-<title>Wedding</title>
+<title>test</title>
 
 <script th:src="@{/js/jquery-2.2.4.min.js}"></script>
 
 <!-- custom js -->
 <script th:src="@{/js/imageLightbox.js}"></script>
 <script th:src="@{/js/scrolla.jquery.js}"></script>
+<script th:src="@{/js/jquery_lazyload/jquery.lazyload.js}"></script>
 
 <script th:src="@{/js/customMap.js}"></script>
 <script th:src="@{/js/handler.js}"></script>
@@ -31,12 +31,11 @@
 
 <!-- font -->
 <link rel="stylesheet" th:href="@{/font/font.css}" />
-
 </head>
 <body>
 
 	<div class="w3-content">
-
+		<h1>기존</h1>
 		<div id="container">
 
 			<div>
@@ -60,10 +59,29 @@
 		</div>
 	</div>
 
+	<div class="w3-content">
+		<h1>새로 할 이미지 방식</h1>
+		<div id="container">
 
+			<div id="img_box"></div>
+
+		</div>
+	</div>
+
+	<input type="hidden" id="page" value="1" />
 </body>
 
 <script type="text/javascript">
+	Rsvp.prototype.appendImg();
+
+	$(window).scroll(
+			function() {
+				if ($(document).height() - $(window).height() == $(window)
+						.scrollTop()) {
+					Rsvp.prototype.appendImg();
+				}
+			});
+
 	// ------ imagelightbox ------
 	$('a[data-imagelightbox="b"]').imageLightbox(
 			{
