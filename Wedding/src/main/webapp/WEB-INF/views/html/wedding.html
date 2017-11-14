@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- 크롤링 -->
 <!-- <meta name="robots" content="noindex,nofollow" /> -->
@@ -104,12 +104,14 @@ p.gothic {
 	<header class="w3-display-container w3-wide bgimg w3-grayscale-min"
 		id="home">
 		<div class="w3-display-bottommiddle w3-text-white w3-center">
-			<h1 class="w3-xxxlarge hanna">
-				변영준<span style="color: #F83F53;">♥</span>임희은
-			</h1>
-			<h2>
+			<h2 style="font-size: 20px;">
 				<b>2017.12.03</b>
 			</h2>
+			<h1 class="w3-xxxlarge hanna">
+				<label class="w3-mobile">변영준<span style="color: #F83F53;">♥</span></label><label
+					class="w3-mobile">임희은</label>
+			</h1>
+
 		</div>
 	</header>
 
@@ -131,14 +133,19 @@ p.gothic {
 	<!-- About / Jane And John -->
 	<div class="w3-container w3-padding-64 w3-pale-red w3-grayscale-min"
 		id="us">
+
+
 		<div class="w3-content">
 			<p class="w3-center">
 				<i class="pen"> 평생을 같이하고 싶은 사람을 만났습니다.<br />서로 아껴주고 이해하며 <br />사랑
 					베풀며 살고 싶습니다.<br />저희 약속 위에 따뜻한 격려로 축복해주셔서<br />힘 찬 출발의 디딤이 되어
-					주십시오.
+					주십시오. <br /> <br /> <label class="pen" style="font-size: 19px;">변석인,
+						김은숙</label> 의 장남 영준 <br /> <label style="font-size: 19px;">임인득,
+						김복이</label> 의 차녀 희은
 				</i>
 			</p>
-			<br /> <br />
+
+			<br />
 			<p class="w3-center scrolla" data-animate="rubberBand">
 				<a href="#GALLERY"
 					class="w3-button w3-black w3-round w3-padding-large w3-large">사진
@@ -151,7 +158,8 @@ p.gothic {
 	<div class="w3-display-container bgimg2">
 		<div class="w3-display-middle w3-text-white w3-center">
 			<h1 class="w3-jumbo hanna">
-				당신을 초대<br />합니다
+				<label class="w3-mobile">당신을 </label><label class="w3-mobile">초대</label><label
+					class="w3-mobile">합니다</label>
 			</h1>
 		</div>
 	</div>
@@ -160,10 +168,11 @@ p.gothic {
 		id="rsvp">
 		<h1 class="pen w3-xxxlarge">참석해주실래요?</h1>
 
-		<br />
 		<p class="gothic">
-			작은 결혼식이기 때문에<br />여러분의 참석여부 확인이 필요합니다.
+			<span class="w3-mobile">작은 결혼식이기 때문에</span><span class="w3-mobile">참석여부
+				확인이 필요합니다.</span>
 		</p>
+		<br />
 		<p class="w3-xlarge scrolla" data-animate="rubberBand">
 			<button
 				onclick="document.getElementById('id01').style.display='block'"
@@ -252,58 +261,69 @@ p.gothic {
 		<div class="w3-content">
 			<h1 class="w3-text-black hanna">사진</h1>
 
-			<div id="container">
-
-				<!--a1 ~ d7 -->
-				<div>
-					<!-- main picture -->
-					<a th:href="@{/img/a1.jpg}" data-imagelightbox="b"><img
-						th:src="@{/img/c6.jpg}" style="width: 100%; height: 100%" /></a>
-
-					<!-- a -->
-					<a th:href="@{/img/a2.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a3.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a4.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a5.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a6.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a7.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a8.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/a9.jpg}" data-imagelightbox="b"></a>
-
-					<!-- b -->
-					<a th:href="@{/img/b1.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b2.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b3.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b4.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b5.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b6.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b7.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b8.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/b9.jpg}" data-imagelightbox="b"></a>
-
-					<!-- c -->
-					<a th:href="@{/img/c1.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c2.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c3.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c4.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c6.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c7.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c8.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/c9.jpg}" data-imagelightbox="b"></a>
-
-					<!-- d -->
-					<a th:href="@{/img/d1.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/d2.jpg}" data-imagelightbox="b"></a> <a
-						th:href="@{/img/d3.jpg}" data-imagelightbox="b"></a>
-
+			<div class="w3-row">
+				<div class="w3-container w3-twothird"></div>
+				<div class="w3-container w3-third">
+					<p style="margin-bottom: 0px;" class=" pen">사진을 클릭해주세요.</p>
 				</div>
 
+				<div class="w3-container w3-twothird"></div>
+				<div class="w3-container w3-third">
+					<img th:src="@{/img/arrow.png}"
+						style="height: 50px; width: 50px; margin-top: 0px;" class="" />
+				</div>
+
+
 			</div>
-			<p class="w3-xlarge">
+			<div id="container" style="margin-top: 0px;">
+				<!--a1 ~ d7 -->
+				<!-- main picture -->
+				<a th:href="@{/img/a1.jpg}" data-imagelightbox="b"><img
+					th:src="@{/img/c6.jpg}" style="width: 100%; height: 100%" /></a>
+
+				<!-- a -->
+				<a th:href="@{/img/a2.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a3.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a4.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a5.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a6.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a7.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a8.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/a9.jpg}" data-imagelightbox="b"></a>
+
+				<!-- b -->
+				<a th:href="@{/img/b1.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b2.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b3.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b4.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b5.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b6.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b7.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b8.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/b9.jpg}" data-imagelightbox="b"></a>
+
+				<!-- c -->
+				<a th:href="@{/img/c1.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c2.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c3.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c4.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c6.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c7.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c8.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/c9.jpg}" data-imagelightbox="b"></a>
+
+				<!-- d -->
+				<a th:href="@{/img/d1.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/d2.jpg}" data-imagelightbox="b"></a> <a
+					th:href="@{/img/d3.jpg}" data-imagelightbox="b"></a>
+
+
+			</div>
+			<!-- <p class="w3-xlarge">
 				<a th:href="@{/img/d6.jpg}" data-imagelightbox="b"><button
 						class="w3-button w3-round w3-red w3-opacity"
 						style="padding: 8px 60px">사진 클릭</button></a>
-			</p>
+			</p> -->
 		</div>
 	</div>
 
@@ -327,7 +347,6 @@ p.gothic {
 	// ------ imagelightbox ------
 	$('a[data-imagelightbox="b"]').imageLightbox(
 			{
-				animationSpeed : 200,
 				preloadNext : true,
 				quitOnDocClick : true,
 				onStart : function() {
