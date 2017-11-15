@@ -9,6 +9,7 @@ body, html {
 
 p {
 	/* line-height: 2 */
+	
 }
 
 .bgimg, .bgimg2 {
@@ -18,7 +19,8 @@ p {
 }
 /* url("https://www.w3schools.com/w3images/wedding_couple.jpg") */
 .bgimg {
-	background-image: url("http://52.79.72.223:8080/wedding/img/c1.jpg")
+	background-image:
+		url("http://52.79.72.223:8080/wedding/img/main_home.jpg")
 }
 
 .bgimg2 {
