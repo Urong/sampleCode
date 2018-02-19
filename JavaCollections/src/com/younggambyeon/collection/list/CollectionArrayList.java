@@ -1,4 +1,4 @@
-package com.younggambyeon.collection;
+package com.younggambyeon.collection.list;
 
 import java.util.ArrayList;
 import java.util.List;

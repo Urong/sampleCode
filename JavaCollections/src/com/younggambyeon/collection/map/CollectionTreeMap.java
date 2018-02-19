@@ -1,4 +1,4 @@
-package com.younggambyeon.collection;
+package com.younggambyeon.collection.map;
 
 import java.util.TreeMap;
 

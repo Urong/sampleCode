@@ -1,4 +1,4 @@
-package com.younggambyeon.collection;
+package com.younggambyeon.collection.set;
 
 import java.util.LinkedHashSet;
 
