@@ -48,7 +48,7 @@ public class InvitationScheduler {
 		users.add(youngjun);
 		users.add(Heeeun);
 
-		String subject = "예식 참석여부 목록입니다";
+		String subject = "예식 참석여부 목록입니다. 총 참석인원 : " + dataManager.getUserQueue().size() + " 명";
 
 		Context cx = new Context(Locale.KOREA);
 		cx.setVariable("rsvps", dataManager.getUserQueue());
