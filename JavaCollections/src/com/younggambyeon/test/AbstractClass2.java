@@ -1,6 +1,6 @@
 package com.younggambyeon.test;
 
-public abstract class TestAbstract {
+public abstract class AbstractClass2 {
 
 	public String b = "추상 클래스 안에 변수입니다.";
 

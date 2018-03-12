@@ -1,25 +1,47 @@
 package com.younggambyeon.test;
 
+import java.util.Stack;
+
 public class TestMain {
 
 	public static void main(String[] args) {
 
-		TestInterface interfaceA = new TestClass();
+		Interface2 interfaceA = new TestClassByInerface();
 
-		TestAbstract abstractA = new TestClass2();
+		AbstractClass2 abstractA = new TestClassByAbstractAndInterface();
 
 		System.out.println(abstractA.b);
 		System.out.println(abstractA.say());
 		System.out.println(abstractA.say2());
 		System.out.println(interfaceA.say());
 
-		String input = "토마토";
+		String str = "토마잉";
 
-		StringBuilder builder = new StringBuilder(input);
-		System.out.println(builder.reverse().toString());
+		StringBuilder builder = new StringBuilder(str);
 
-		char[] in = input.toCharArray();
+		if (str.equals(builder.reverse().toString())) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
 
-		System.out.println(in[1]);
+		char[] in = str.toCharArray();
+
+		Stack<String> stack = new Stack<String>();
+
+		for (char c : in) {
+			stack.add(String.valueOf(c));
+		}
+
+		String input = "";
+
+		for (int i = 0; i < in.length; i++) {
+			input += stack.pop();
+		}
+		
+		
+		
+		System.out.println(input);
+
 	}
 }

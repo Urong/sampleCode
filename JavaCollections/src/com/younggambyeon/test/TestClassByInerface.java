@@ -1,6 +1,6 @@
 package com.younggambyeon.test;
 
-public class TestClass implements TestInterface {
+public class TestClassByInerface implements Interface2 {
 
 	@Override
 	public String say() {
