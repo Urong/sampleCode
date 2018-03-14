@@ -1,10 +1,11 @@
 package com.younggambyeon.test;
 
+import java.util.Date;
 import java.util.Stack;
 
 public class TestMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 
 		Interface2 interfaceA = new TestClassByInerface();
 
@@ -38,10 +39,13 @@ public class TestMain {
 		for (int i = 0; i < in.length; i++) {
 			input += stack.pop();
 		}
-		
-		
-		
+
 		System.out.println(input);
+
+		// java reflection.
+		Date date = (Date) Class.forName("java.util.Date").newInstance();
+		
+		System.out.println("!");
 
 	}
 }
