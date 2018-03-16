@@ -5,11 +5,17 @@ import java.util.Stack;
 
 public class TestMain {
 
-	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+	public static void main(String[] args)
+			throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 
-		Interface2 interfaceA = new TestClassByInerface();
+		Interface2 interfaceA = new TestClassByInterface();
+		Interface2 interfaceB = new TestClassByInterface2();
 
 		AbstractClass2 abstractA = new TestClassByAbstractAndInterface();
+
+		TestMain main = new TestMain();
+		main.TestDependencyInjection(interfaceA);
+		main.TestDependencyInjection(interfaceB);
 
 		System.out.println(abstractA.b);
 		System.out.println(abstractA.say());
@@ -44,8 +50,13 @@ public class TestMain {
 
 		// java reflection.
 		Date date = (Date) Class.forName("java.util.Date").newInstance();
-		
+
 		System.out.println("!");
 
+	}
+
+	public void TestDependencyInjection(Interface2 interface2) {
+
+		System.out.println(interface2.getClass());
 	}
 }
