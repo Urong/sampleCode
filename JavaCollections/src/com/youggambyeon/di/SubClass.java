@@ -5,7 +5,7 @@ package com.youggambyeon.di;
  * 
  * Object wire.
  * 
- * Not created self dependency object. anything put dependency object.
+ * Not created self dependency object. anyone put dependency object.
  * 
  * 
  */
