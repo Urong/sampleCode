@@ -52,6 +52,8 @@ public class TestMain {
 		Date date = (Date) Class.forName("java.util.Date").newInstance();
 
 		System.out.println("!");
+		 int[][] results = new int[3][3];
+		System.out.println(results.length);
 
 	}
 
