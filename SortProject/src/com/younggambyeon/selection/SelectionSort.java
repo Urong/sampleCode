@@ -33,7 +33,7 @@ public class SelectionSort implements Sorter {
 	}
 
 	public static void main(String[] args) {
-		String input = "73 44 66 71 80 92";
+		String input = "73 44 66 88 71 80 92 55";
 
 		String[] temp = input.split(" ");
 		int[] arr = new int[temp.length];
