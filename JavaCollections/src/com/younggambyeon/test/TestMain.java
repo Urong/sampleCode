@@ -51,6 +51,7 @@ public class TestMain {
 		// java reflection.
 		Date date = (Date) Class.forName("java.util.Date").newInstance();
 
+		System.out.println(date.getTime());
 		System.out.println("!");
 		 int[][] results = new int[3][3];
 		System.out.println(results.length);
