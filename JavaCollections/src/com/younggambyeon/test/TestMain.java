@@ -53,9 +53,35 @@ public class TestMain {
 
 		System.out.println(date.getTime());
 		System.out.println("!");
-		 int[][] results = new int[3][3];
+		int[][] results = new int[3][3];
 		System.out.println(results.length);
 
+		String a = "123";
+
+		int b = Integer.parseInt(a);
+
+		// return String object
+		String c = a.valueOf(b);
+
+		System.out.println(c);
+
+		int aa = 8;
+		int bb = 12;
+
+		System.out.println(GCF(aa, bb));
+		System.out.println(LCM(aa, bb));
+	}
+
+	public static int GCF(int a, int b) {
+		if (b == 0) {
+			return a;
+		} else {
+			return (GCF(b, a % b));
+		}
+	}
+
+	public static int LCM(int a, int b) {
+		return (a * b) / GCF(a, b);
 	}
 
 	public void TestDependencyInjection(Interface2 interface2) {
